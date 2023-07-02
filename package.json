@@ -3,10 +3,11 @@
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
-  "type":"module",
+	"type": "module",
+
 	"scripts": {
 		"start": "nodemon index.js",
-		"build": "npm run build"
+		"build": "babel index.js --out-file dist/index.js"
 	},
 	"author": "",
 	"license": "ISC",
@@ -24,5 +25,15 @@
 		"path": "^0.12.7",
 		"url": "^0.11.1",
 		"uuid": "^9.0.0"
-	}
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.22.5",
+		"@babel/core": "^7.22.5",
+		"@babel/plugin-transform-modules-commonjs": "^7.22.5",
+		"@babel/preset-env": "^7.22.5"
+	},
+	 "babel": {
+    "presets": ["@babel/preset-env"],
+    "plugins": ["@babel/plugin-transform-modules-commonjs"]
+  }
 }
