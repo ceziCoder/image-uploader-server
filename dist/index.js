@@ -118,6 +118,6 @@ app.get('/public', function (req, res) {
   });
 });
 var PORT = process.env.PORT;
-server.listen(PORT, function () {
+app.listen(PORT, function () {
   console.log("Server is running on port ".concat(PORT).yellow.bold);
 });
