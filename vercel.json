@@ -6,5 +6,8 @@
 		{ "src": "/public/(.*)", "dest": "/dist/index.js" },
 		{ "src": "/single/(.*)", "dest": "/dist/index.js" },
 		{ "src": "/single/:filename", "dest": "/dist/index.js" }
-	]
+	],
+	"env": {
+		"PORT": "3000"
+	}
 }
