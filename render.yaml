@@ -1,0 +1,8 @@
+services:
+  - name: image-uploader-server
+    env:
+      - key: PORT
+        value: 3000
+    buildCommand: npm run build
+    startCommand: npm start
+    healthCheckPath: /
