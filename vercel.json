@@ -2,10 +2,5 @@
 	"version": 2,
 	"name": "image-uploader-server",
 	"builds": [{ "src": "index.js", "use": "@vercel/node" }],
-	"routes": [
-		{ "src": "/public/(.*)", "dest": "/index.js" },
-		{ "src": "/single/(.*)", "dest": "/index.js" },
-		{ "src": "/single/:filename", "dest": "/index.js" },
-		 { "handle": "filesystem" }
-	]
+	"routes": [{ "src": "/(.*)", "dest": "/index.js" }]
 }    
