@@ -127,6 +127,6 @@ app.get('/public', (req, res) => {
 
 const PORT = process.env.PORT
 
-server.listen(PORT, () => {
+app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`.yellow.bold)
 })
