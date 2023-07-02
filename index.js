@@ -64,8 +64,10 @@ const upload = multer({
     storage: storage,
 
 })
-
-
+////// response server 
+app.get('/', (req, res) => {
+    res.send('hello')
+})
 
 //// to upload single image
 app.post('/single', upload.single('image'), (req, res, err) => {
