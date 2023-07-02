@@ -4,7 +4,6 @@
 	"description": "",
 	"main": "index.js",
 	"type": "module",
-
 	"scripts": {
 		"start": "node index.js",
 		"build": "babel index.js --out-dir dist"
@@ -32,8 +31,12 @@
 		"@babel/plugin-transform-modules-commonjs": "^7.22.5",
 		"@babel/preset-env": "^7.22.5"
 	},
-	 "babel": {
-    "presets": ["@babel/preset-env"],
-    "plugins": ["@babel/plugin-transform-modules-commonjs"]
-  }
+	"babel": {
+		"presets": [
+			"@babel/preset-env"
+		],
+		"plugins": [
+			"@babel/plugin-transform-modules-commonjs"
+		]
+	}
 }
