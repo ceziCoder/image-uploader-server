@@ -5,15 +5,16 @@
 	"main": "index.js",
 	"type": "module",
 	"scripts": {
-		"start": "node index.js",
+		"start": "babel-node index.js",
 		"build": "babel index.js --out-dir dist"
 	},
-	 "engines": {
-    "node": "18.16.1"
-  },
+	"engines": {
+		"node": "18.16.1"
+	},
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"@babel/node": "^7.22.5",
 		"body-parser": "^1.20.2",
 		"colors": "^1.4.0",
 		"cors": "^2.8.5",
@@ -34,13 +35,6 @@
 		"@babel/core": "^7.22.5",
 		"@babel/plugin-transform-modules-commonjs": "^7.22.5",
 		"@babel/preset-env": "^7.22.5"
-	},
-	"babel": {
-		"presets": [
-			"@babel/preset-env"
-		],
-		"plugins": [
-			"@babel/plugin-transform-modules-commonjs"
-		]
 	}
+	
 }
