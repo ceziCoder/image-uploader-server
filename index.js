@@ -120,8 +120,8 @@ app.get('/public', (req, res) => {
             fileContents.push({ fileName: file, content });
         });
 
-        // Set cache control header
-        res.setHeader('Cache-Control', 'public, max-age=31536000')
+        
+
 
         // return file contents
         res.send(fileContents);
