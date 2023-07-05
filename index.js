@@ -10,6 +10,10 @@ import { v4 as uuidv4 } from 'uuid'
 import { fileURLToPath } from 'url'
 import { dirname, join } from 'path'
 import fs from 'fs'
+import sharp from 'sharp'
+
+
+
 
 const app = express()
 const server = http.createServer(app,
@@ -26,7 +30,7 @@ app.use(helmet.contentSecurityPolicy({
     },
 }))
 dotenv.config()
-const allowedOrigin = 'https://cezi-image-uploader.vercel.app/'
+const allowedOrigin = 'https://image-uploader-client-blush.vercel.app/'
 app.use(cors({
     origin: '*'
 }))
@@ -39,6 +43,7 @@ const __dirname = dirname(__filename)
 
 app.use(express.static(path.join(__dirname, './public')))
 console.log(__dirname)
+
 
 
 
@@ -64,9 +69,9 @@ const upload = multer({
     storage: storage,
 
 })
-////// response server 
+
 app.get('/', (req, res) => {
-    res.send('hello')
+    res.send('hello server is runnig')
 })
 
 //// to upload single image
@@ -115,6 +120,9 @@ app.get('/public', (req, res) => {
             fileContents.push({ fileName: file, content });
         });
 
+        // Set cache control header
+        res.setHeader('Cache-Control', 'public, max-age=31536000')
+
         // return file contents
         res.send(fileContents);
     });
@@ -125,8 +133,10 @@ app.get('/public', (req, res) => {
 
 
 
+
+
 const PORT = process.env.PORT
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`.yellow.bold)
 })
