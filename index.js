@@ -121,7 +121,7 @@ app.get('/public', (req, res) => {
         });
 
         
-
+        res.setHeader('Cache-Control', 'no-cache')
 
         // return file contents
         res.send(fileContents);
